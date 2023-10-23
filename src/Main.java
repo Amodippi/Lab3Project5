@@ -1,17 +1,32 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Random random = new Random();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        int largest = 0;
+        int smallest = 100;
+
+        // Generate and compare 10 random integers
+        int count = 0;
+        while (count < 10) {
+            int randomNumber = random.nextInt(100) + 1; // Generates a random number between 1 and 100
+            System.out.println(randomNumber);
+            if (randomNumber > largest) {
+                largest = randomNumber;
+
+            }
+
+            if (randomNumber < smallest) {
+                smallest = randomNumber;
+            }
+
+            count++;
         }
+
+
+        System.out.println("Largest number: " + largest);
+        System.out.println("Smallest number: " + smallest);
     }
 }
